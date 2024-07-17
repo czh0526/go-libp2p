@@ -238,6 +238,7 @@ func (s *Swarm) DialPeer(ctx context.Context, p peer.ID) (network.Conn, error) {
 // dialbackoff.
 func (s *Swarm) dialPeer(ctx context.Context, p peer.ID) (*Conn, error) {
 	log.Debugw("dialing peer", "from", s.local, "to", p)
+	fmt.Printf("【Swarm】diapPeer => %v\n", p)
 	err := p.Validate()
 	if err != nil {
 		return nil, err

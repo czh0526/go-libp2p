@@ -757,6 +757,7 @@ func (h *BasicHost) preferredProtocol(p peer.ID, pids []protocol.ID) (protocol.I
 // It will also resolve any /dns4, /dns6, and /dnsaddr addresses.
 func (h *BasicHost) Connect(ctx context.Context, pi peer.AddrInfo) error {
 	// absorb addresses into peerstore
+	fmt.Printf("【BasicHost】Connect => %v \n", pi)
 	h.Peerstore().AddAddrs(pi.ID, pi.Addrs, peerstore.TempAddrTTL)
 
 	forceDirect, _ := network.GetForceDirectDial(ctx)
