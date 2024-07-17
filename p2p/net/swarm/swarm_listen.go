@@ -133,6 +133,8 @@ func (s *Swarm) AddListenAddr(a ma.Multiaddr) error {
 				}
 				return
 			}
+			fmt.Printf("【Swarm】AddListenAddr => accept incoming conn: %v \n", c.RemoteMultiaddr())
+
 			canonicallog.LogPeerStatus(100, c.RemotePeer(), c.RemoteMultiaddr(), "connection_status", "established", "dir", "inbound")
 			if s.metricsTracer != nil {
 				c = wrapWithMetrics(c, s.metricsTracer, time.Now(), network.DirInbound)
