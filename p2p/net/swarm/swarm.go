@@ -438,6 +438,7 @@ func (s *Swarm) addConn(tc transport.CapableConn, dir network.Direction) (*Conn,
 		s.directConnNotifs.Unlock()
 	}
 	s.notifyAll(func(f network.Notifiee) {
+		fmt.Printf("【Swarm】notify `Connected` => %v\n", c)
 		f.Connected(s, c)
 	})
 	c.notifyLk.Unlock()

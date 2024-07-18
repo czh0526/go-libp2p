@@ -467,6 +467,7 @@ func (h *BasicHost) newStreamHandler(s network.Stream) {
 	}
 
 	log.Debugf("negotiated: %s (took %s)", protoID, took)
+	fmt.Printf("【newStreamHandler】negotiated: %s (took %s)\n", protoID, took)
 
 	handle(protoID, s)
 }

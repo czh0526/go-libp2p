@@ -219,7 +219,7 @@ func (mab *memoryAddrBook) ConsumePeerRecord(recordEnvelope *record.Envelope, tt
 func (mab *memoryAddrBook) addAddrs(p peer.ID, addrs []ma.Multiaddr, ttl time.Duration) {
 	fmt.Println("【memoryAddrBook】addAddrs:")
 	for _, addr := range addrs {
-		fmt.Printf("\t=> %v\n", addr.String())
+		fmt.Printf("\t%s => %v\n", p, addr.String())
 	}
 	s := mab.segments.get(p)
 	s.Lock()

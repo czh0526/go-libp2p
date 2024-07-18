@@ -1012,6 +1012,7 @@ func (nn *netNotifiee) IDService() *idService {
 }
 
 func (nn *netNotifiee) Connected(_ network.Network, c network.Conn) {
+	fmt.Printf("【netNotifiee】Connected => c = %v\n", c.RemoteMultiaddr())
 	ids := nn.IDService()
 
 	ids.connsMu.Lock()
