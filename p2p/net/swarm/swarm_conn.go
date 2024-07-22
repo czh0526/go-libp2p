@@ -92,7 +92,7 @@ func (c *Conn) doClose() {
 
 		// Only notify for disconnection if we notified for connection
 		c.swarm.notifyAll(func(f network.Notifiee) {
-			fmt.Printf("【Swarm】notify `Disconnected` => %v\n", c)
+			//fmt.Printf("【Swarm】notify `Disconnected` => %v\n", c)
 			f.Disconnected(c.swarm, c)
 		})
 		c.swarm.refs.Done()

@@ -101,7 +101,7 @@ func (s *Swarm) AddListenAddr(a ma.Multiaddr) error {
 
 	// signal to our notifiees on listen.
 	s.notifyAll(func(n network.Notifiee) {
-		fmt.Printf("【Swarm】notify `Listen` => %v\n", maddr)
+		//fmt.Printf("【Swarm】notify `Listen` => %v\n", maddr)
 		n.Listen(s, maddr)
 	})
 
@@ -122,7 +122,7 @@ func (s *Swarm) AddListenAddr(a ma.Multiaddr) error {
 
 			// signal to our notifiees on listen close.
 			s.notifyAll(func(n network.Notifiee) {
-				fmt.Printf("【Swarm】notify `ListenClose` => %v\n", maddr)
+				//fmt.Printf("【Swarm】notify `ListenClose` => %v\n", maddr)
 				n.ListenClose(s, maddr)
 			})
 			s.refs.Done()
