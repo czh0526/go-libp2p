@@ -467,7 +467,7 @@ func (h *BasicHost) newStreamHandler(s network.Stream) {
 	}
 
 	log.Debugf("negotiated: %s (took %s)", protoID, took)
-	fmt.Printf("【newStreamHandler】negotiated: %s (took %s)\n", protoID, took)
+	//fmt.Printf("【newStreamHandler】negotiated: %s (took %s)\n", protoID, took)
 
 	handle(protoID, s)
 }
@@ -758,7 +758,7 @@ func (h *BasicHost) preferredProtocol(p peer.ID, pids []protocol.ID) (protocol.I
 // It will also resolve any /dns4, /dns6, and /dnsaddr addresses.
 func (h *BasicHost) Connect(ctx context.Context, pi peer.AddrInfo) error {
 	// absorb addresses into peerstore
-	fmt.Printf("【BasicHost】Connect => %v \n", pi)
+	//fmt.Printf("【BasicHost】Connect => %v \n", pi)
 	h.Peerstore().AddAddrs(pi.ID, pi.Addrs, peerstore.TempAddrTTL)
 
 	forceDirect, _ := network.GetForceDirectDial(ctx)
